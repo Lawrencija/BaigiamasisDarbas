@@ -17,28 +17,25 @@ namespace AntrasProjektas.Projektas.Testai
         public void PriesKiekvienaTesta()
         {
             pirmasPuslapis = new PirmasPuslapis(driver);
-
-
-
+            pirmasPuslapis.PasirinkKlaipeda()
+                          .PasirinktiBarbora()
+                          .SutikimoMygtukoPaspaudimas();
         }
 
         [Test]
-        public void KalbosPasirinkimas()
+        public void KalbosPasirinkimas() 
         {
-            pirmasPuslapis.PasirinkKlaipeda()
-                          .PasirinktiBarbora()
-                          .SutikimoMygtukoPaspaudimas()
-                          .KalbosPasirinkimoMygtukoPaspaudimas();
-           
-            pirmasPuslapis.AngluKalbosPasirinkimas();
+            PadarykScreenshotaJeiguTestasFailed(); // kai testas leidziamas su Firefox būna failed, todėl daro printscreen.
+
+            pirmasPuslapis.KalbosPasirinkimoMygtukoPaspaudimas()
+                          .AngluKalbosPasirinkimas();
             Thread.Sleep(3000);
-            pirmasPuslapis.AngluKalbosPatikrinimas();
-            pirmasPuslapis.KalbosPasirinkimoMygtukoPaspaudimas();
-            pirmasPuslapis.LietuviuKalbosPasirinkimas();
+            pirmasPuslapis.AngluKalbosPatikrinimas()
+                          .KalbosPasirinkimoMygtukoPaspaudimas()
+                          .LietuviuKalbosPasirinkimas();
             Thread.Sleep(3000);
             pirmasPuslapis.LietuviuKalbosPatikrinimas();
-
         }
-       
+      
     }
 }

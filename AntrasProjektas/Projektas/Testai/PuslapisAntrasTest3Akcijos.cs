@@ -17,17 +17,12 @@ namespace AntrasProjektas.Projektas.Testai
         [SetUp]
         public void PriesKiekvienaTesta()
         {
-
-            string vardas = "laurapavardaite@gmail.com";
-            string passwordgood = "geras123";
-
             pirmasPuslapis = new PirmasPuslapis(driver);
             antrasPuslapis = new PuslapisAntras(driver);
             pirmasPuslapis.PasirinkKauna()
                           .PasirinktiBarbora()
                           .SutikimoMygtukoPaspaudimas()
                           .akcijosMygtukoPaspaudimas();
-
         }
 
         [Test]
@@ -44,7 +39,6 @@ namespace AntrasProjektas.Projektas.Testai
 
             antrasPuslapis.pasirinktiElementa(tekstas)
                           .patikrintiPasirinktaElementa(tekstas);
-            
         }
     }
 }

@@ -33,7 +33,7 @@ namespace AntrasProjektas.Projektas.Testai
                           .Prisijungti()
                           .TuriPrisijungti();
             WebDriverWait waitas = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
-            waitas.Until(ExpectedConditions.InvisibilityOfElementLocated(By.LinkText(".b - zigzag - heading")));
+            waitas.Until(ExpectedConditions.InvisibilityOfElementLocated(By.CssSelector(".b - zigzag - heading")));
 
             pirmasPuslapis.YpatingasPasiulymas();
         }
@@ -47,8 +47,6 @@ namespace AntrasProjektas.Projektas.Testai
                           .paspaustiIeskoti();
             Thread.Sleep(3000);
             treciasPuslapis.pasirinkimoPatikrinimas($"Paieškos rezultatai pagal užklausą: \"{ieskomapreke}\"");
-
-
         }
 
         [Test]
@@ -62,8 +60,7 @@ namespace AntrasProjektas.Projektas.Testai
                            .pazymetiKruasana()
                            .IdetiIPirkiniuKrepseli()
                            .ArYraKruasanas()
-                           .Isimtivisasprekes();
-                           
+                           .Isimtivisasprekes();        
         }
 
         [Test]
@@ -79,10 +76,7 @@ namespace AntrasProjektas.Projektas.Testai
             treciasPuslapis.Isimtivisasprekes();
             Thread.Sleep(3000);
             treciasPuslapis.ArKrepselisTuscias();
-
         }
-
-
 
     }
 }
