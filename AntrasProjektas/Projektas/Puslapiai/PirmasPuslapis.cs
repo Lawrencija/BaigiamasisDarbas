@@ -20,8 +20,7 @@ namespace AntrasProjektas.Projektas.Puslapiai
 
         private IWebElement sutinkuMygtukas => driver.FindElement(By.XPath("/html/body/div[2]/div/div[1]/button"));
 
-        private IWebElement prisijungtiPasirinkimas => driver.FindElement(By.CssSelector("body > div.b-app > div > header > div.b-header-top > div > div > div:nth-child(2) > div.b-header--links--item.b-header--links--login > button"));
-
+        private IWebElement prisijungtiPasirinkimas => driver.FindElement(By.XPath("//span[contains(.,'Prisijungti')]"));
         private IWebElement elpastas => driver.FindElement(By.Id("b-login-email"));
 
         private IWebElement slaptazodis => driver.FindElement(By.Id("b-login-password"));

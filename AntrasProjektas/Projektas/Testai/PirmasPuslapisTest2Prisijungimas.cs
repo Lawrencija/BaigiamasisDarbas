@@ -33,7 +33,7 @@ namespace AntrasProjektas.Projektas.Testai
                           .SuvestiSlaptazodi(passwordgood)
                           .Prisijungti();
            WebDriverWait waitas = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
-           waitas.Until(ExpectedConditions.InvisibilityOfElementLocated(By.LinkText(".b - header--select--top > div > .b - header--select--text")));
+           waitas.Until(ExpectedConditions.InvisibilityOfElementLocated(By.CssSelector(".b - header--select--top > div > .b - header--select--text")));
            pirmasPuslapis.TuriPrisijungti(); // Assert, koks rezultatas jei teisinga slaptazodi suvedi
 
         }
